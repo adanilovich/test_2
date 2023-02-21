@@ -1,0 +1,8 @@
+FROM mysql:5.7
+copy . .
+run sed -i "5i sql_mode = \"\"" /etc/my.cnf
+run sed -i "6i general_log_file = /tmp/query.log" /etc/my.cnf
+run sed -i "7i general_log = 1" /etc/my.cnf
+
+
+expose 3306

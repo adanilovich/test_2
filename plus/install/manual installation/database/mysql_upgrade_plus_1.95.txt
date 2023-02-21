@@ -1,0 +1,19 @@
+ALTER TABLE c_ban_users
+			CHANGE ip ip varchar(100) NOT NULL default '';
+
+ALTER TABLE c_config
+			ADD NOTIFY_SOUND varchar(255) NOT NULL default 'sounds/notify.wav';
+
+ALTER TABLE c_lurkers
+			CHANGE ip ip varchar(100) NOT NULL default '';
+
+ALTER TABLE c_reg_users
+			CHANGE ip ip varchar(100) NOT NULL default '',
+			DROP use_sounds;
+
+ALTER TABLE c_stats
+			CHANGE ip ip varchar(100) NOT NULL default '';
+
+ALTER TABLE c_users
+			CHANGE ip ip varchar(100) NOT NULL default '';
+			

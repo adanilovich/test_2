@@ -1,0 +1,28 @@
+FROM php:7.2-apache
+run docker-php-ext-install mysqli && docker-php-ext-enable mysqli
+run apt update
+run yes | apt install wget unzip vim
+copy . .
+run chmod 777 plus/acount/pages/bak/
+run chmod 666 plus/acount/pages/chat_index.txt
+run chmod 666 plus/acount/pages/chat_ip_logs.htm
+run chmod 666 plus/acount/pages/ip.txt
+run chmod 777 plus/admin/backups/
+run chmod 777 plus/bot/subs.inc
+run chmod 777 plus/botfb/
+run chmod 777 plus/cache/
+run chmod 777 plus/images/avatars/uploaded/
+run chmod 777 plus/images/smilies/
+run chmod 666 plus/images/smilies/smilies.php
+run chmod 777 plus/logs/
+run chmod 777 plus/logsadmin/
+
+RUN rm -rf plus/install/install.php
+RUN sed -i "s/cpanelname_chatdb/plus/" plus/config/config.lib.php
+RUN sed -i "s/\"C_DB_HOST\", 'localhost'/\"C_DB_HOST\", 'mysql'/" plus/config/config.lib.php
+RUN sed -i "s/cpanelname_chatuser/root/" plus/config/config.lib.php
+RUN sed -i "s/chatuser_password/test/" plus/config/config.lib.php
+RUN sed -i "s/\$ALLOW_UPLOADS/1/" plus/config/config.lib.php
+RUN sed -i "s/\$EN_STATS/1/" plus/config/config.lib.php
+expose 80
+

@@ -1,0 +1,14 @@
+# test_1
+
+Just run
+```
+make up
+./exploit -h 0.0.0.0 -d localhost
+```
+
+## Detailed Usage
+
+```
+▶ ./exploit
+Usage: ./exploit [-h <ip address>] [-d <domain>]
+```

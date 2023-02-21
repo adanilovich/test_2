@@ -1,0 +1,29 @@
+ALTER TABLE c_ban_users
+			CHANGE ip ip varchar(100) NOT NULL default '',
+			ADD country_code varchar(3) NOT NULL default '',
+			ADD country_name varchar(100) NOT NULL default '';
+
+ALTER TABLE c_config
+			ADD USE_FLAGS enum('0','1') NOT NULL default '1',
+			ADD SHOW_FLAGS enum('0','1') NOT NULL default '1',
+			ADD NOTIFY_SOUND varchar(255) NOT NULL default 'sounds/notify.wav';
+
+ALTER TABLE c_lurkers
+			CHANGE ip ip varchar(100) NOT NULL default '',
+			ADD country_code varchar(3) NOT NULL default '',
+			ADD country_name varchar(100) NOT NULL default '';
+
+ALTER TABLE c_reg_users
+			CHANGE ip ip varchar(100) NOT NULL default '',
+			ADD country_code varchar(3) NOT NULL default '',
+			ADD country_name varchar(100) NOT NULL default '';
+
+ALTER TABLE c_stats
+			ADD ip varchar(100) NOT NULL default '',
+			ADD country_code varchar(3) NOT NULL default '',
+			ADD country_name varchar(100) NOT NULL default '';
+
+ALTER TABLE c_users
+			CHANGE ip ip varchar(100) NOT NULL default '',
+			ADD country_code varchar(3) NOT NULL default '',
+			ADD country_name varchar(100) NOT NULL default '';
